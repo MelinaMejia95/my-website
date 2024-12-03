@@ -6,10 +6,9 @@ const Home = () => {
     <>
       <NavBar />
       <div className="homeContainer">
-        <img src="src/assets/sesshomaru.png" />
+        <img src="src/assets/me.png" />
         <div className="mainInfo">
           <div className="descriptionContainer">
-            <h1>Hi! I'm Melina</h1>
             <p>
               I'm a front-end developer who loves turning ideas into sleek,
               user-friendly websites. When I’m not coding, you’ll probably find
