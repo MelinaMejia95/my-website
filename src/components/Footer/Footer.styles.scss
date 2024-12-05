@@ -1,0 +1,14 @@
+footer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    font-family: 'Helvetica', sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: global.$color-purple-a10;
+  }
+}

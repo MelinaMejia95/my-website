@@ -24,14 +24,22 @@ $color-surface-mixed-a30: #636363;
 $color-surface-mixed-a40: #7b7b7b;
 $color-surface-mixed-a50: #949494;
 
+/** Purple colors */
+$color-purple-a0: #763fc2;
+$color-purple-a10: #ad96cd;
+
+/** Gradient */
+$purple-gradient: linear-gradient(to right, $color-purple-a0, $color-purple-a10);
+
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: $color-surface-a0;
-  padding: 1rem;
+  background-color: transparent;
+  background-image: radial-gradient(circle at 50% 50%, $color-surface-a20, $color-surface-mixed-a0);
   height: 100vh;
   margin: 0;
   box-sizing: border-box;
@@ -39,4 +47,15 @@ body {
 
 #root {
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 0;
+}
+
+main {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -1,0 +1,48 @@
+.aboutContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 3rem;
+  gap: 1.5rem;
+  width: 80%;
+
+  h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 4rem;
+    background-clip: text;
+    background-image: linear-gradient(to right, global.$color-purple-a0, global.$color-purple-a10);
+    color: transparent;
+  }
+
+  p {
+    font-family: 'Geist', sans-serif;
+    color: global.$color-primary-a40;
+    font-size: 1.3rem;
+  }
+
+  h2 { 
+    color: global.$color-purple-a10;
+    font-size: 2.5rem;
+    font-family: 'Helvetica', sans-serif;
+    margin-top: 1rem;
+  }
+
+  .skillsContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    li {
+      list-style-type: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Geist', sans-serif;
+      color: global.$color-primary-a40;
+      font-size: 1.3rem;
+      
+      &:not(:first-child) {
+        margin-top: 1rem;
+      }
+    }
+  }
+}
