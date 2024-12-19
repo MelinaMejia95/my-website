@@ -31,62 +31,67 @@ const About = () => {
         Beyond my work in development, I love to mentor! I want to guide and inspire the next generation of developers
         to achieve their professional goals.
       </p>
-      <h2>Skills</h2>
-      <div className="skillsContainer">
-        <ul>
-          <li>
-            <HTMLIcon />
-            HTML
-          </li>
-          <li>
-            <CSSIcon />
-            CSS
-          </li>
-          <li>
-            <JavaScriptIcon />
-            JavaScript
-          </li>
-          <li>
-            <NextJSIcon /> Next.js
-          </li>
-          <li>
-            <RemixIcon /> Remix
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <ReactIcon /> React
-          </li>
-          <li>
-            <ReactIcon /> React Native
-          </li>
-          <li>
-            <TypeScriptIcon /> TypeScript
-          </li>
-          <li>
-            <NodeIcon /> Node.js
-          </li>
-          <li>
-            <JestIcon /> Jest
-          </li>
-        </ul>
-        <ul>
-          <li>
-            <CypressIcon /> Cypress
-          </li>
-          <li>
-            <SASSIcon /> SASS
-          </li>
-          <li>
-            <GitIcon /> Git
-          </li>
-          <li>
-            <AccessibilityIcon /> Web Accessibility
-          </li>
-          <li>
-            <TailwindIcon /> Tailwind CSS
-          </li>
-        </ul>
+      <div className="secondaryContainer">
+        <div>
+          <h2>Skills</h2>
+          <div className="skillsContainer">
+            <ul>
+              <li>
+                <HTMLIcon />
+                HTML
+              </li>
+              <li>
+                <CSSIcon />
+                CSS
+              </li>
+              <li>
+                <JavaScriptIcon />
+                JavaScript
+              </li>
+              <li>
+                <NextJSIcon /> Next.js
+              </li>
+              <li>
+                <RemixIcon /> Remix
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <ReactIcon /> React
+              </li>
+              <li>
+                <ReactIcon /> React Native
+              </li>
+              <li>
+                <TypeScriptIcon /> TypeScript
+              </li>
+              <li>
+                <NodeIcon /> Node.js
+              </li>
+              <li>
+                <JestIcon /> Jest
+              </li>
+            </ul>
+            <ul>
+              <li>
+                <CypressIcon /> Cypress
+              </li>
+              <li>
+                <SASSIcon /> SASS
+              </li>
+              <li>
+                <GitIcon /> Git
+              </li>
+              <li>
+                <AccessibilityIcon /> Web Accessibility
+              </li>
+              <li>
+                <TailwindIcon /> Tailwind CSS
+              </li>
+            </ul>
+          </div>
+        </div>
+        <img src="src/assets/lucifer.png" />
       </div>
     </div>
   );

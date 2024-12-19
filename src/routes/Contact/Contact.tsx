@@ -11,23 +11,26 @@ const Contact = () => {
         connect and share ideas, feel free to reach out. Let’s collaborate and
         create something amazing together!
       </p>
-      <form>
-        <div className="formField nameField">
-          <label>Your Name</label>
-          <input type="text" name="name" id="name" placeholder="Enter your name" />
-        </div>
-        <div className="formField emailField">
-          <label>Your Email</label>
-          <input type="email" name="email" id="email" placeholder="Enter your email" />
-        </div>
-        <div className="formField messageField">
-          <label>Message</label>
-          <textarea name="message" id="message" cols={20} rows={10} placeholder="Enter your message" />
-        </div>
-        <button>
-          Submit!
-        </button>
-      </form>
+      <div className="secondaryContainer">
+        <form>
+          <div className="formField nameField">
+            <label>Your Name</label>
+            <input type="text" name="name" id="name" placeholder="Enter your name" />
+          </div>
+          <div className="formField emailField">
+            <label>Your Email</label>
+            <input type="email" name="email" id="email" placeholder="Enter your email" />
+          </div>
+          <div className="formField messageField">
+            <label>Message</label>
+            <textarea name="message" id="message" cols={20} rows={5} placeholder="Enter your message" />
+          </div>
+          <button>
+            Submit!
+          </button>
+        </form>
+        <img src="src/assets/sauron.png" />
+      </div>
     </div>
   );
 };

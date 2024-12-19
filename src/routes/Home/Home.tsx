@@ -3,7 +3,6 @@ import "./Home.styles.scss";
 const Home = () => {
   return (
     <>
-
       <div className="homeContainer">
         <img src="src/assets/me.png" />
         <div className="mainInfo">

@@ -17,6 +17,7 @@ const Mentorship = () => {
         someone to support and inspire your journey in tech, let’s connect
         through <a href="https://adplist.org/mentors/melina-mejia-bedoya">my ADPList profile!</a> 
       </p>
+      <img src="src/assets/manson.png" />
     </div>
   );
 };

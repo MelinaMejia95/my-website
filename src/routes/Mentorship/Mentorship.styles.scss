@@ -8,7 +8,7 @@
 
   h1 {
     font-family: 'Helvetica', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     background-clip: text;
     background-image: linear-gradient(to right, global.$color-purple-a0, global.$color-purple-a10);
     color: transparent;
@@ -17,7 +17,8 @@
   p {
     font-family: 'Geist', sans-serif;
     color: global.$color-primary-a40;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    line-height: 24px;
   }
 
   h2 { 
@@ -29,5 +30,9 @@
 
   a {
     color: global.$color-purple-a10;
+  }
+
+  img {
+    width: 13rem;
   }
 }

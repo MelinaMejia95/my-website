@@ -8,7 +8,7 @@
 
   h1 {
     font-family: 'Helvetica', sans-serif;
-    font-size: 4rem;
+    font-size: 3rem;
     background-clip: text;
     background-image: linear-gradient(to right, global.$color-purple-a0, global.$color-purple-a10);
     color: transparent;
@@ -17,86 +17,98 @@
   p {
     font-family: 'Geist', sans-serif;
     color: global.$color-primary-a40;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
+    line-height: 24px;
   }
 
-  form {
-    margin-top: 1rem;
-    width: 80%;
-    display: grid;
-    grid-template-areas: 'name email'
-                         'message message'
-                         'button button';
-    column-gap: 1.5rem;
-    row-gap: 1.3rem;
+  .secondaryContainer{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
 
-    .formField {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      font-family: 'Helvetica', sans-serif;
-
-      label {
-        color: global.$color-purple-a10;
-        font-size: 1.3rem;
-      }
-
-      input {
-        height: 3rem;
-        
-      }
-
-      textarea {
-        resize: none;
-      }
-
-      input, textarea {
-        border-radius: 1rem;
-        padding: 1rem;
+    form {
+      width: 70%;
+      display: grid;
+      grid-template-areas: 'name email'
+                           'message message'
+                           'button button';
+      column-gap: 1.5rem;
+      row-gap: 1.3rem;
+  
+      .formField {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
         font-family: 'Helvetica', sans-serif;
+  
+        label {
+          color: global.$color-purple-a10;
+          font-size: 1.1rem;
+        }
+  
+        input {
+          height: 3rem;
+          
+        }
+  
+        textarea {
+          resize: none;
+        }
+  
+        input, textarea {
+          border-radius: 1rem;
+          padding: 1rem;
+          font-family: 'Helvetica', sans-serif;
+          font-size: 1.1rem;
+          border: 4px solid #ad96cd;
+          background-color: global.$color-primary-a50;
+          outline: none;
+  
+          &:focus {
+            -webkit-box-shadow: 0px 0px 20px 0px rgba(173,150,205,1);
+            -moz-box-shadow: 0px 0px 20px 0px rgba(173,150,205,1);
+            box-shadow: 0px 0px 20px 0px rgba(173,150,205,1);
+          }
+        }
+      }
+  
+      .nameField {
+        grid-area: name;
+      }
+  
+      .emailField {
+        grid-area: email;
+      }
+  
+      .messageField {
+        grid-area: message;
+      }
+  
+      button {
+        grid-area: button;
+        width: 7rem;
+        border-radius: 1rem;
+        padding: 0.5rem;
         font-size: 1.1rem;
+        font-weight: 700;
+        background-color: global.$color-purple-a10;
         border: 4px solid #ad96cd;
-        background-color: global.$color-primary-a50;
-        outline: none;
-
-        &:focus {
-          -webkit-box-shadow: 0px 0px 20px 0px rgba(173,150,205,1);
-          -moz-box-shadow: 0px 0px 20px 0px rgba(173,150,205,1);
-          box-shadow: 0px 0px 20px 0px rgba(173,150,205,1);
+        cursor: pointer;
+        color: global.$color-surface-a10;
+  
+        &:hover {
+          border: 4px solid #ad96cd;
+          background-color: transparent;
+          color: global.$color-purple-a10;
         }
       }
     }
 
-    .nameField {
-      grid-area: name;
+    img {
+      width: 15rem;
     }
 
-    .emailField {
-      grid-area: email;
-    }
-
-    .messageField {
-      grid-area: message;
-    }
-
-    button {
-      grid-area: button;
-      width: 7rem;
-      border-radius: 1rem;
-      padding: 1rem;
-      font-size: 1.3rem;
-      font-weight: 700;
-      justify-self: end;
-      background-color: global.$color-purple-a10;
-      border: 4px solid #ad96cd;
-      cursor: pointer;
-      color: global.$color-surface-a10;
-
-      &:hover {
-        border: 4px solid #ad96cd;
-        background-color: transparent;
-        color: global.$color-purple-a10;
-      }
-    }
   }
+
 }
