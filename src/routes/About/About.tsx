@@ -19,7 +19,7 @@ const About = () => {
   return (
     <div className="aboutContainer">
       <h1>I'm Melina Mejía!</h1>
-      <p className="description">
+      <p>
         A senior front-end developer based in Colombia, passionate about
         crafting intuitive, responsive, and scalable web experiences. With years
         of professional experience, I specialize in modern frameworks, clean
@@ -54,8 +54,6 @@ const About = () => {
               <li>
                 <RemixIcon /> Remix
               </li>
-            </ul>
-            <ul>
               <li>
                 <ReactIcon /> React
               </li>
@@ -71,8 +69,6 @@ const About = () => {
               <li>
                 <JestIcon /> Jest
               </li>
-            </ul>
-            <ul>
               <li>
                 <CypressIcon /> Cypress
               </li>
@@ -83,7 +79,7 @@ const About = () => {
                 <GitIcon /> Git
               </li>
               <li>
-                <AccessibilityIcon /> Web Accessibility
+                <AccessibilityIcon /> Web A11y
               </li>
               <li>
                 <TailwindIcon /> Tailwind CSS

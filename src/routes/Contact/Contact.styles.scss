@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 3rem;
+  padding: 0 1rem;
   gap: 1.5rem;
-  width: 80%;
 
   h1 {
     font-family: 'Helvetica', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     background-clip: text;
     background-image: linear-gradient(to right, global.$color-purple-a0, global.$color-purple-a10);
     color: transparent;
@@ -23,16 +22,18 @@
 
   .secondaryContainer{
     display: flex;
+    flex-direction: column;
     align-items: center;
     width: 100%;
     justify-content: space-between;
 
     form {
-      width: 70%;
+      width: 100%;
       display: grid;
-      grid-template-areas: 'name email'
-                           'message message'
-                           'button button';
+      grid-template-areas: 'name'
+                           'email'
+                           'message'
+                           'button';
       column-gap: 1.5rem;
       row-gap: 1.3rem;
   
@@ -106,9 +107,43 @@
     }
 
     img {
-      width: 15rem;
+      width: 12rem;
+      margin-top: 1.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-sm) {
+  .contactContainer {
+    padding: 0 3rem;
+    width: 80%;
+
+    h1 {
+      font-size: 3rem;
     }
 
+    .secondaryContainer {
+      img {
+        width: 15rem;
+      }
+    }
   }
+}
 
+@media screen and (min-width: global.$layout-breakpoint-md) {
+  .contactContainer {
+    .secondaryContainer {
+      flex-direction: row;
+      gap: 1.5rem;
+
+      form {
+        width: 70%;
+      }
+
+      img {
+        width: 16rem;
+        margin-top: 0;
+      }
+    }
+  }
 }

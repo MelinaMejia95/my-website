@@ -2,13 +2,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 3rem;
   gap: 1rem;
-  width: 80%;
+  margin-top: 2rem;
 
   h1 {
     font-family: 'Helvetica', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     background-clip: text;
     background-image: linear-gradient(to right, global.$color-purple-a0, global.$color-purple-a10);
     color: transparent;
@@ -19,45 +18,80 @@
     color: global.$color-primary-a40;
     font-size: 1.1rem;
     line-height: 24px;
+    margin: 0 1rem;
   }
 
   
   .secondaryContainer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 1rem;
-    width: 100%;
     justify-content: space-between;
+    margin: 0 1rem;
     
     h2 { 
       color: global.$color-purple-a10;
       font-size: 2rem;
       font-family: 'Helvetica', sans-serif;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
     }
 
     .skillsContainer {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-  
-      li {
-        list-style-type: none;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        font-family: 'Geist', sans-serif;
-        color: global.$color-primary-a40;
-        font-size: 1.1rem;
-        
-        &:not(:first-child) {
-          margin-top: 1rem;
+
+      ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    
+        li {
+          list-style-type: none;
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          font-family: 'Geist', sans-serif;
+          color: global.$color-primary-a40;
+          font-size: 1rem;
         }
       }
     }
 
     img {
-      width: 13rem;
+      width: 10rem;
+      margin-top: 1rem;
     }
   }
+}
 
+@media screen and (min-width: global.$layout-breakpoint-sm) {
+  .aboutContainer {
+    width: 80%;
+    padding: 0 3rem;
+    margin-top: 0;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .secondaryContainer {
+      flex-direction: row;
+      width: 100%;
+
+      img {
+        width: 13rem;
+      }
+
+      .skillsContainer {
+        ul {
+          li {
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
 }

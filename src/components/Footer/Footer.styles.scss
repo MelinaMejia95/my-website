@@ -1,15 +1,27 @@
 footer {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1rem;
-  margin-top: 2rem;
+  flex-wrap: wrap;
+  padding: 2rem 1rem 1rem;
 
   span {
     font-family: 'Helvetica', sans-serif;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: global.$color-purple-a10;
   }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-sm) {
+   footer {
+    justify-content: flex-start;
+
+    span {
+      font-size: 1.2rem;
+    }
+   }
 }

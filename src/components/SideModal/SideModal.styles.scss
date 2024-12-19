@@ -1,0 +1,26 @@
+.blurOverlay {
+  position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(8px);
+    background: rgba(34, 34, 34, 0.15);
+    z-index: 500;
+}
+
+.sideModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 60%;
+  max-width: 60%;
+  background-color: global.$color-surface-a20;
+  z-index: 600;
+  height: 100%;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.2);
+}

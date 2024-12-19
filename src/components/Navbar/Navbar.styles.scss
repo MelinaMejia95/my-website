@@ -2,38 +2,50 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  width: 90%;
+  width: 100%;
 
   .introContainer {
     display: flex;
     gap: 1rem;
     align-items: center;
 
-    a {
+    div {
       text-decoration: none;
       display: flex;
       align-items: center;
       gap: 1rem;
     }
 
-    img {
+    button {
       width: 4rem;
+      height: 4rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
     }
   
     h2 {  
-      font-family: 'Trade Winds', serif;
-      font-size: 2.3rem;
-      background-clip: text;
-      background-image: global.$purple-gradient;
-      color: transparent;
+      display: none;
     }
+  }
+
+  .helloText {
+    font-family: 'Trade Winds', serif;
+    font-size: 2rem;
+    color: global.$color-purple-a10;
   }
 
   .linksContainer {
     position: relative;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-around;
-    align-items: center;
     gap: 1.5rem;
 
       a {
@@ -50,9 +62,14 @@ nav {
         }
       }
 
-      .brandIcon {
-        width: 2rem;
-        height: 2rem;
+      .brandIcons {
+        display: flex;
+        gap: 1.5rem;
+
+        a {
+          width: 2rem;
+          height: 2rem;
+        }
       }
 
       .activeLink {
@@ -60,5 +77,32 @@ nav {
         background-clip: text;
         background-image: global.$purple-gradient;
       }
+  }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-sm) {
+  nav {
+    .introContainer {
+      h2 {
+        display: flex;
+        font-family: 'Trade Winds', serif;
+        font-size: 2.3rem;
+        background-clip: text;
+        background-image: global.$purple-gradient;
+        color: transparent;
+      }
+    }
+  
+    .linksContainer {
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-md) {
+  nav {
+    width: 90%;
   }
 }
