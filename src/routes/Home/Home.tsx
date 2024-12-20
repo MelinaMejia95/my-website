@@ -1,10 +1,18 @@
+import { AnimatePresence, motion } from "motion/react";
 import "./Home.styles.scss";
 
 const Home = () => {
   return (
     <>
       <div className="homeContainer">
-        <img src="src/assets/me.png" />
+        <AnimatePresence>
+          <motion.img
+            src="src/assets/me.png"
+            alt="Melina's anime version"
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          ></motion.img>
+        </AnimatePresence>
         <div className="mainInfo">
           <h1>I'm Melina!</h1>
           <p>
