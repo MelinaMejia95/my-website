@@ -93,7 +93,7 @@ const Contact = () => {
             <button type="submit">Submit!</button>
           </Form>
         </Formik>
-        <img src="src/assets/sauron.png" />
+        <img src="src/assets/sauron.png" alt="Sauron the cat" />
       </div>
     </div>
   );

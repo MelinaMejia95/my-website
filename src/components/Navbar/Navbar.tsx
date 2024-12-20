@@ -85,7 +85,7 @@ const NavBar = () => {
       <div className="introContainer">
         <div>
           <button onClick={handleModal}>
-            <img src="src/assets/logo-blur.png" />
+            <img src="src/assets/logo-blur.png" alt="Melina's logo" />
           </button>
           <h2>Hi!</h2>
         </div>

@@ -87,7 +87,7 @@ const About = () => {
             </ul>
           </div>
         </div>
-        <img src="src/assets/lucifer.png" />
+        <img src="src/assets/lucifer.png" alt="Lucifer the cat" />
       </div>
     </div>
   );
