@@ -12,7 +12,7 @@ const AccessibilityIcon = ({ color = "#ad96cd" }) => {
         stroke={color}
         strokeWidth="1.5"
         strokeLinecap="round"
-        stroke-linejoin="round"
+        strokeLinejoin="round"
       />
       <path
         d="M7 9L12 10M17 9L12 10M12 10V13M12 13L10 18M12 13L14 18"

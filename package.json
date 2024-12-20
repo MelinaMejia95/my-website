@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@floating-ui/react": "^0.27.2",
     "formik": "^2.4.6",
     "lucide-react": "^0.464.0",
     "motion": "^11.15.0",

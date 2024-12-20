@@ -1,3 +1,4 @@
+import { useMediaQuery } from "react-responsive";
 import AccessibilityIcon from "../../components/Icons/AccessibilityIcon";
 import CSSIcon from "../../components/Icons/CSSIcon";
 import CypressIcon from "../../components/Icons/CypressIcon";
@@ -12,10 +13,13 @@ import RemixIcon from "../../components/Icons/RemixIcon";
 import SASSIcon from "../../components/Icons/SASSIcon";
 import TailwindIcon from "../../components/Icons/TailwindIcon";
 import TypeScriptIcon from "../../components/Icons/TypeScriptIcon";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 import "./About.styles.scss";
 
 const About = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   return (
     <div className="aboutContainer">
       <h1>I'm Melina Mejía!</h1>
@@ -28,8 +32,9 @@ const About = () => {
         place for everyone.
       </p>
       <p>
-        Beyond my work in development, I love to mentor! I want to guide and inspire the next generation of developers
-        to achieve their professional goals.
+        Beyond my work in development, I love to mentor! I want to guide and
+        inspire the next generation of developers to achieve their professional
+        goals.
       </p>
       <div className="secondaryContainer">
         <div>
@@ -87,7 +92,28 @@ const About = () => {
             </ul>
           </div>
         </div>
-        <img src="src/assets/lucifer.png" alt="Lucifer the cat" />
+        {isMobile ? (
+          <img
+            src="src/assets/lucifer.png"
+            alt="Lucifer the cat"
+            className="catImg"
+          />
+        ) : (
+          <Tooltip
+            content={
+              <img
+                src="src/assets/dialogue-box.png"
+                alt="Dialogue box"
+              />
+            }
+          >
+            <img
+              src="src/assets/lucifer.png"
+              alt="Lucifer the cat"
+              className="catImg"
+            />
+          </Tooltip>
+        )}
       </div>
     </div>
   );
