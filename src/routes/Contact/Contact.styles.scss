@@ -115,7 +115,6 @@
 
 @media screen and (min-width: global.$layout-breakpoint-sm) {
   .contactContainer {
-    padding: 0 3rem;
     width: 80%;
 
     h1 {
@@ -123,6 +122,9 @@
     }
 
     .secondaryContainer {
+      flex-wrap: wrap;
+      justify-content: center;
+      
       img {
         width: 15rem;
       }
@@ -137,7 +139,10 @@
       gap: 1.5rem;
 
       form {
-        width: 70%;
+        width: 80%;
+        grid-template-areas: 'name email'
+                            'message message'
+                            'button button';
       }
 
       img {
@@ -145,5 +150,11 @@
         margin-top: 0;
       }
     }
+  }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-lg) {
+  .contactContainer {
+    padding: 0 3rem;
   }
 }

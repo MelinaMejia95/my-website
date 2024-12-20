@@ -79,7 +79,7 @@ const NavBar = () => {
   useEffect(() => {
     setIsModalOpen(false);
   }, [location]);
- console.log(location)
+
   return (
     <nav>
       <div className="introContainer">
