@@ -1,8 +1,10 @@
 import { useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import { Field, Form, Formik } from "formik";
 import emailjs from "@emailjs/browser";
 
 import "./Contact.styles.scss";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 interface IFormValues {
   name: string;
@@ -11,6 +13,8 @@ interface IFormValues {
 }
 
 const Contact = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   const initialValues: IFormValues = {
     name: "",
     email: "",
@@ -93,7 +97,23 @@ const Contact = () => {
             <button type="submit">Submit!</button>
           </Form>
         </Formik>
-        <img src="src/assets/sauron.png" alt="Sauron the cat" />
+        {isMobile ? (
+          <img src="src/assets/sauron.png" alt="Sauron the cat" />
+        ) : (
+          <Tooltip
+            content={
+              <img
+                src="src/assets/sauron-dialogue.png"
+                alt="Cat saying: I'm Sauron! I'm the youngest cat! Contact us! We would love to hear about your ideas and how we can help you make them come true!"
+              />
+            }
+            placement="right-start"
+            xPosition={{ add: false, positionExtra: 90 }}
+            yPosition={{ add: false, positionExtra: 170 }}
+          >
+            <img src="src/assets/sauron.png" alt="Sauron the cat" />
+          </Tooltip>
+        )}
       </div>
     </div>
   );

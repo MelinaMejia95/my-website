@@ -22,7 +22,7 @@ const About = () => {
 
   return (
     <div className="aboutContainer">
-      <h1>I'm Melina Mejía!</h1>
+      <h1>I'm Melina Mejía Bedoya!</h1>
       <p>
         A senior front-end developer based in Colombia, passionate about
         crafting intuitive, responsive, and scalable web experiences. With years
@@ -102,10 +102,13 @@ const About = () => {
           <Tooltip
             content={
               <img
-                src="src/assets/dialogue-box.png"
-                alt="Dialogue box"
+                src="src/assets/lucifer-dialogue.png"
+                alt="Cat saying: Hi there!
+                    I'm Lucifer, I'm no longer part of this physical world but I'm still alive in mommy's heart!"
               />
             }
+            xPosition={{ add: true, positionExtra: 10 }}
+            yPosition={{ add: false, positionExtra: 100 }}
           >
             <img
               src="src/assets/lucifer.png"

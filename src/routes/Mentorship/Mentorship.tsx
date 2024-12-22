@@ -1,6 +1,11 @@
+import { useMediaQuery } from "react-responsive";
+
 import "./Mentorship.styles.scss";
+import Tooltip from "../../components/Tooltip/Tooltip";
 
 const Mentorship = () => {
+  const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
   return (
     <div className="mentorshipContainer">
       <h1>I'm a mentor!</h1>
@@ -28,7 +33,31 @@ const Mentorship = () => {
           width="100%"
           className="impactSwag"
         />
-        <img src="src/assets/manson.png" className="petImage" alt="Manson the cat" />
+        {isMobile ? (
+          <img
+            src="src/assets/manson.png"
+            className="petImage"
+            alt="Manson the cat"
+          />
+        ) : (
+          <Tooltip
+            content={
+              <img
+                src="src/assets/manson-dialogue.png"
+                alt="Cat saying: Hi! I'm Manson! I'm a toothless cat. Mom is the best at mentoring people, what are you waiting to schedule something with her!"
+              />
+            }
+            placement="top-start"
+            xPosition={{ add: false, positionExtra: 50 }}
+            yPosition={{ add: true, positionExtra: 10 }}
+          >
+            <img
+              src="src/assets/manson.png"
+              className="petImage"
+              alt="Manson the cat"
+            />
+          </Tooltip>
+        )}
       </section>
     </div>
   );
