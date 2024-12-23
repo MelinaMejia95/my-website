@@ -1,27 +1,42 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import { Field, Form, Formik } from "formik";
+import { useFormik } from "formik";
 import emailjs from "@emailjs/browser";
+import toast, { Toaster } from "react-hot-toast";
+import * as Yup from "yup";
 
 import "./Contact.styles.scss";
 import Tooltip from "../../components/Tooltip/Tooltip";
+import Alert from "../../components/Alert/Alert";
+import ErrorLabel from "../../components/ErrorLabel/ErrorLabel";
 
-interface IFormValues {
-  name: string;
-  email: string;
-  message: string;
-}
+const validationSchema = Yup.object().shape({
+  name: Yup.string().required("This field is required"),
+  email: Yup.string()
+    .required("This field is required")
+    .email("Not a valid email address"),
+  message: Yup.string().required("This field is required"),
+});
 
 const Contact = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const initialValues: IFormValues = {
+  const initialValues = {
     name: "",
     email: "",
     message: "",
   };
 
-  const handleFormSubmit = (values: IFormValues) => {
+  const { errors, touched, values, getFieldProps, handleSubmit, isValid, resetForm } =
+    useFormik({
+      initialValues,
+      onSubmit: () => console.log("Form submitted!"),
+      validationSchema,
+    });
+
+  const handleFormSubmit = () => {
+    setIsSubmitting(true);
     const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || "";
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "";
     const templateParams = {
@@ -32,12 +47,26 @@ const Contact = () => {
     };
     emailjs
       .send(serviceId, templateId, templateParams)
-      .then((response) => {
-        console.log(response);
+      .then(() => {
+        resetForm();
+        toast.custom(
+          <Alert
+            message="Thank you for reaching out! we'll get back to you as soon as possible."
+            imgUrl="src/assets/manson-happy.png"
+            error={false}
+          />
+        );
       })
-      .catch((error) => {
-        console.log(error);
-      });
+      .catch(() => {
+        toast.custom(
+          <Alert
+            message="Oops! Looks like we're having some issues. Please try again later."
+            imgUrl="src/assets/manson-sorry.png"
+            error
+          />
+        );
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   useEffect(() => {
@@ -57,46 +86,67 @@ const Contact = () => {
         create something amazing together!
       </p>
       <div className="secondaryContainer">
-        <Formik
-          initialValues={initialValues}
-          onSubmit={(values) => handleFormSubmit(values)}
-        >
-          <Form id="contactForm">
-            <div className="formField nameField">
-              <label htmlFor="name">Your Name</label>
-              <Field
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Enter your name"
-                required
-              />
-            </div>
-            <div className="formField emailField">
-              <label htmlFor="email">Your Email</label>
-              <Field
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Enter your email"
-                required
-              />
-            </div>
-            <div className="formField messageField">
-              <label htmlFor="message">Message</label>
-              <Field
-                name="message"
-                id="message"
-                placeholder="Enter your message"
-                component="textarea"
-                cols={20}
-                rows={5}
-                required
-              />
-            </div>
-            <button type="submit">Submit!</button>
-          </Form>
-        </Formik>
+        <form id="contactForm" onSubmit={handleSubmit} noValidate>
+          <div className="formField nameField">
+            <label htmlFor="name">Your Name</label>
+            <input
+              {...getFieldProps("name")}
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Enter your name"
+              required
+              className={errors.name && touched.name ? "errorField" : ""}
+            />
+            {errors.name && touched.name && (
+              <ErrorLabel message={errors.name} />
+            )}
+          </div>
+          <div className="formField emailField">
+            <label htmlFor="email">Your Email</label>
+            <input
+              {...getFieldProps("email")}
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter your email"
+              required
+              className={errors.email && touched.email ? "errorField" : ""}
+            />
+            {errors.email && touched.email && (
+              <ErrorLabel message={errors.email} />
+            )}
+          </div>
+          <div className="formField messageField">
+            <label htmlFor="message">Message</label>
+            <textarea
+              {...getFieldProps("message")}
+              name="message"
+              id="message"
+              placeholder="Enter your message"
+              cols={20}
+              rows={5}
+              required
+              className={errors.message && touched.message ? "errorField" : ""}
+            />
+            {errors.message && touched.message && (
+              <ErrorLabel message={errors.message} />
+            )}
+          </div>
+          <button
+            type="submit"
+            onClick={handleFormSubmit}
+            disabled={
+              !isValid ||
+              getFieldProps("name").value === "" ||
+              getFieldProps("email").value === "" ||
+              getFieldProps("message").value === "" ||
+              isSubmitting
+            }
+          >
+            {isSubmitting ? 'Sending...' : 'Submit!'}
+          </button>
+        </form>
         {isMobile ? (
           <img src="src/assets/sauron.png" alt="Sauron the cat" />
         ) : (
@@ -115,6 +165,7 @@ const Contact = () => {
           </Tooltip>
         )}
       </div>
+      <Toaster />
     </div>
   );
 };

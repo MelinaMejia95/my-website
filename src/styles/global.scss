@@ -28,6 +28,10 @@ $color-surface-mixed-a50: #949494;
 $color-purple-a0: #7c4bc0;
 $color-purple-a10: #ad96cd;
 
+/** Alert colors */
+$color-error-a0: #f68585fa;
+$color-success-a0: #92ca92fa;
+
 /** Gradient */
 $purple-gradient: linear-gradient(to right, $color-purple-a0, $color-purple-a10);
 

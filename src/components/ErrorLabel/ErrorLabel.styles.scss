@@ -1,0 +1,14 @@
+.errorContainer {
+  display: flex;
+  gap: 0.5rem;
+
+  p {
+    font-size: 0.75rem;
+    color: global.$color-error-a0;
+  }
+
+  .icon {
+    width: 1rem;
+    color: global.$color-error-a0;
+  }
+}

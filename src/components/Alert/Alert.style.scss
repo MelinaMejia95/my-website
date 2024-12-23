@@ -1,0 +1,51 @@
+.alertContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 95%;
+  height: auto;
+  background-color: global.$color-surface-a10;
+  padding: 0.5rem;
+  border-radius: 0.625rem;
+
+  img {
+    width: 4.5rem;
+  }
+
+  p {
+    font-family: 'Geist', sans-serif;
+    font-size: 1rem;
+  }
+
+  .errorText {
+    color: global.$color-error-a0;
+  }
+
+  .successText {
+    color: global.$color-success-a0;
+  }
+}
+
+.errorBlur {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(246, 133, 133, 0.98);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(246, 133, 133, 0.98);
+  box-shadow: 0px 0px 15px 0px rgba(246, 133, 133, 0.98);
+}
+
+.successBlur {
+  -webkit-box-shadow: 0px 0px 15px 0px rgba(146, 202, 146, 0.98);
+  -moz-box-shadow: 0px 0px 15px 0px rgba(146, 202, 146, 0.98);
+  box-shadow: 0px 0px 15px 0px rgba(146, 202, 146, 0.98);
+}
+
+@media screen and (min-width: global.$layout-breakpoint-sm) {
+  .alertContainer {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-md) {
+  .alertContainer {
+    width: auto;
+  }
+}
