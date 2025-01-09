@@ -35,7 +35,7 @@ const Mentorship = () => {
         />
         {isMobile ? (
           <img
-            src="src/assets/manson.webP"
+            src="/assets/manson.webP"
             className="petImage"
             alt="Manson the cat"
           />
@@ -43,7 +43,7 @@ const Mentorship = () => {
           <Tooltip
             content={
               <img
-                src="src/assets/manson-dialogue.webP"
+                src="/assets/manson-dialogue.webP"
                 alt="Cat saying: Hi! I'm Manson! I'm a toothless cat. Mom is the best at mentoring people, what are you waiting to schedule something with her!"
               />
             }
@@ -52,7 +52,7 @@ const Mentorship = () => {
             yPosition={{ add: true, positionExtra: 10 }}
           >
             <img
-              src="src/assets/manson.webP"
+              src="/assets/manson.webP"
               className="petImage"
               alt="Manson the cat"
             />

@@ -103,7 +103,7 @@ const About = () => {
         </div>
         {isMobile ? (
           <img
-            src="src/assets/lucifer.webP"
+            src="/assets/lucifer.webP"
             alt="Lucifer the cat"
             className="catImg"
           />
@@ -111,7 +111,7 @@ const About = () => {
           <Tooltip
             content={
               <img
-                src="src/assets/lucifer-dialogue.webP"
+                src="/assets/lucifer-dialogue.webP"
                 alt="Cat saying: Hi there!
                     I'm Lucifer, I'm no longer part of this physical world but I'm still alive in mommy's heart!"
                 width="200px"
@@ -122,7 +122,7 @@ const About = () => {
             yPosition={yCoordinate}
           >
             <img
-              src="src/assets/lucifer.webP"
+              src="/assets/lucifer.webP"
               alt="Lucifer the cat"
               className="catImg"
             />
