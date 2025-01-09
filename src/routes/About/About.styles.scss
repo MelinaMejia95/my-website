@@ -26,9 +26,10 @@
   .secondaryContainer {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 1rem;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 3rem;
     margin: 0 1rem;
     
     h2 { 
@@ -36,6 +37,7 @@
       font-size: 2rem;
       font-family: 'Helvetica', sans-serif;
       margin: 1rem 0;
+      text-align: center;
     }
 
     .skillsContainer {
@@ -66,12 +68,12 @@
 
 @media screen and (min-width: global.$layout-breakpoint-sm) {
   .aboutContainer {
-    width: 80%;
     padding: 0 3rem;
     margin-top: 0;
 
     h1 {
       font-size: 3rem;
+      margin: 0;
     }
 
     p {
@@ -94,5 +96,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (min-width: global.$layout-breakpoint-lg) {
+  .aboutContainer {
+    width: 80%;
   }
 }

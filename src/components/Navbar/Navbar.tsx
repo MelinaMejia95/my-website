@@ -32,7 +32,7 @@ const NavBar = () => {
           <button onClick={handleModal}>
             <AnimatePresence>
               <motion.img
-                src="src/assets/logo-blur.png"
+                src="src/assets/logo-blur.webP"
                 alt="Melina's logo"
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}

@@ -52,7 +52,7 @@ const Contact = () => {
         toast.custom(
           <Alert
             message="Thank you for reaching out! we'll get back to you as soon as possible."
-            imgUrl="src/assets/manson-happy.png"
+            imgUrl="src/assets/manson-happy.webP"
             error={false}
           />
         );
@@ -61,7 +61,7 @@ const Contact = () => {
         toast.custom(
           <Alert
             message="Oops! Looks like we're having some issues. Please try again later."
-            imgUrl="src/assets/manson-sorry.png"
+            imgUrl="src/assets/manson-sorry.webP"
             error
           />
         );
@@ -148,12 +148,12 @@ const Contact = () => {
           </button>
         </form>
         {isMobile ? (
-          <img src="src/assets/sauron.png" alt="Sauron the cat" />
+          <img src="src/assets/sauron.webP" alt="Sauron the cat" />
         ) : (
           <Tooltip
             content={
               <img
-                src="src/assets/sauron-dialogue.png"
+                src="src/assets/sauron-dialogue.webP"
                 alt="Cat saying: I'm Sauron! I'm the youngest cat! Contact us! We would love to hear about your ideas and how we can help you make them come true!"
               />
             }
@@ -161,7 +161,7 @@ const Contact = () => {
             xPosition={{ add: false, positionExtra: 90 }}
             yPosition={{ add: false, positionExtra: 170 }}
           >
-            <img src="src/assets/sauron.png" alt="Sauron the cat" />
+            <img src="src/assets/sauron.webP" alt="Sauron the cat" />
           </Tooltip>
         )}
       </div>

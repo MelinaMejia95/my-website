@@ -1,4 +1,5 @@
 import { useMediaQuery } from "react-responsive";
+
 import AccessibilityIcon from "../../components/Icons/AccessibilityIcon";
 import CSSIcon from "../../components/Icons/CSSIcon";
 import CypressIcon from "../../components/Icons/CypressIcon";
@@ -19,6 +20,14 @@ import "./About.styles.scss";
 
 const About = () => {
   const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+  const smallDevices = useMediaQuery({ query: "(max-width: 813px)" });
+
+  const yCoordinate = smallDevices
+    ? { add: false, positionExtra: 210 }
+    : { add: false, positionExtra: 150 };
+  const xCoordinate = smallDevices
+    ? { add: true, positionExtra: 55 }
+    : { add: true, positionExtra: 10 };
 
   return (
     <div className="aboutContainer">
@@ -94,7 +103,7 @@ const About = () => {
         </div>
         {isMobile ? (
           <img
-            src="src/assets/lucifer.png"
+            src="src/assets/lucifer.webP"
             alt="Lucifer the cat"
             className="catImg"
           />
@@ -102,16 +111,18 @@ const About = () => {
           <Tooltip
             content={
               <img
-                src="src/assets/lucifer-dialogue.png"
+                src="src/assets/lucifer-dialogue.webP"
                 alt="Cat saying: Hi there!
                     I'm Lucifer, I'm no longer part of this physical world but I'm still alive in mommy's heart!"
+                width="200px"
+                height="200px"
               />
             }
-            xPosition={{ add: true, positionExtra: 10 }}
-            yPosition={{ add: false, positionExtra: 100 }}
+            xPosition={xCoordinate}
+            yPosition={yCoordinate}
           >
             <img
-              src="src/assets/lucifer.png"
+              src="src/assets/lucifer.webP"
               alt="Lucifer the cat"
               className="catImg"
             />
