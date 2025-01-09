@@ -27,7 +27,7 @@ const NavLinks = () => {
       <AnimatePresence>
         <div className="brandIcons">
           <motion.a
-            href="https://github.com"
+            href="https://github.com/MelinaMejia95"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
@@ -44,7 +44,7 @@ const NavLinks = () => {
             </svg>
           </motion.a>
           <motion.a
-            href="https://linkedin.com"
+            href="https://www.linkedin.com/in/melinamejia95/"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.1 }}
